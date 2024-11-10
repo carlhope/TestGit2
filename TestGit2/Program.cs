@@ -1,9 +1,20 @@
 ﻿namespace TestGit2
 {
+    using System;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     internal class Program
     {
+
         static void Main(string[] args)
         {
+
+            HostApplicationBuilder builder = new HostApplicationBuilder();
+            //add services
+            
+            builder.Services.AddScoped<IFruit, Fruit>();
+
+
             Console.WriteLine("Hello, World!");
             Console.WriteLine("testing");
             string test = "test";
@@ -17,8 +28,7 @@
             Person Jane = new Person("Jane", 25);
             Person.PrintPerson(Jane);
             Console.WriteLine(Person.Count);
-            Jane.Dispose();
-            Console.WriteLine(Person.Count);
+            //investigate dispose and finalize
         }
     }
 }

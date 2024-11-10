@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestGit2
 {
-    public class Fruit
+    public class Fruit : IFruit
     {
         public string Name { get; set; }
         public string Color { get; set; }
