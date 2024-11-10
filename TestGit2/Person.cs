@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestGit2
 {
-    public class Person : IDisposable
+    public class Person
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -26,39 +26,5 @@ namespace TestGit2
             
         }
 
-        private bool _disposedValue;
-
-        // Instantiate a SafeHandle instance.
-        private SafeHandle? _safeHandle = new SafeFileHandle(IntPtr.Zero, true);
-
-        // Public implementation of Dispose pattern callable by consumers.
-        public void Dispose()
-        {
-            //Dispose(true);
-            //GC.SuppressFinalize(this);
-            Count--;
-        }
-
-        // Protected implementation of Dispose pattern.
-        protected virtual void Dispose(bool disposing)
-        {
-            //if (!_disposedValue)
-            //{
-            //    if (disposing)
-            //    {
-            //        _safeHandle?.Dispose();
-            //        _safeHandle = null;
-            //    }
-
-            //    _disposedValue = true;
-            //}
-            //Count--;
-        }
-
-        // reduce count by 1 when a person is disposed
-        ~Person()
-        {
-            Count--;
-        }
      }
 }
