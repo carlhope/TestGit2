@@ -11,7 +11,7 @@ namespace TestGit2
     public class Person
     {
         public string Name { get; set; }
-        public int Age { get; set; }
+        private int Age { get; set; }//cant directly access age as it is private
         public static int Count { get; set; }
 
         public Person(string name, int age)
